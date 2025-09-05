@@ -1,0 +1,384 @@
+amnesia: true
+tagslam_parameters:
+# optimizer mode: full (full optimization, no iSAM2 used)
+#                 slow (use iSAM2, but test for error and use full if error is large)
+#                 fast (iSAM2 only, no test for error)
+# default: slow
+  optimizer_mode: fast
+# minimum angle [in degrees] between optical axis and tag surface
+  minimum_viewing_angle: 15.0
+# minimum tag area in pixels^2. Any tags smaller than that are ignored
+  minimum_tag_area: 2000
+# number of incremental updates before running
+# a full graph optimization (default: 50)
+  max_num_incremental_opt: 50
+# estimated error of tag corner detector
+  pixel_noise: 1.0
+# maximum allowed subgraph error. If error is above that,
+# the frame is thrown away, the measurement ignored.
+  max_subgraph_error: 50.0
+# Noise with which the subgraph absolute priors will be
+# pinned down. This parameter usually does not need to be touched.
+  subgraph_abs_prior_position_noise: 0.1
+  subgraph_abs_prior_rotation_noise: 0.1
+# if the time stamps (header.stamp) of your data messages are not
+# identical (hardware synced), set this option to true, and
+# tagslam tries to line them up as well as possible. Expect larger errors
+# because the data is not truly synchronous.
+  use_approximate_sync: false
+body_defaults:
+  position_noise: 0.05
+  rotation_noise: 0.01
+default_body: grasp_lab
+bodies:
+ - grasp_lab:
+     type: simple
+     is_static: true
+     default_tag_size: 0.2
+     pose:
+       position:
+         x: 0.00000000
+         y: 0.00000000
+         z: -0.00000000
+       rotation:
+         x: -0.00000000
+         y: -0.00000000
+         z: -0.00000000
+       position_noise:
+         x: 0.00010000
+         y: 0.00010000
+         z: 0.00010000
+       rotation_noise:
+         x: 0.00001000
+         y: 0.00001000
+         z: 0.00001000
+     tags:
+       - id: 32
+         size: 0.20000000
+         pose:
+           position:
+             x: 0.00000000
+             y: -0.00000000
+             z: 1.50000000
+           rotation:
+             x: 1.20919960
+             y: -1.20919960
+             z: -1.20919960
+           position_noise:
+             x: 0.00010000
+             y: 0.00010000
+             z: 0.00010000
+           rotation_noise:
+             x: 0.00001000
+             y: 0.00001000
+             z: 0.00001000
+       - id: 38
+         size: 0.20000000
+         pose:
+           position:
+             x: 0.00065666
+             y: 1.10021891
+             z: 1.47391252
+           rotation:
+             x: 1.23760179
+             y: -1.18608250
+             z: -1.22902697
+           position_noise:
+             x: 0.00030536
+             y: 0.00050695
+             z: 0.00111245
+           rotation_noise:
+             x: 0.00149983
+             y: 0.00145041
+             z: 0.00056290
+       - id: 39
+         size: 0.20000000
+         pose:
+           position:
+             x: 0.00035440
+             y: 0.38522107
+             z: 1.26073177
+           rotation:
+             x: 1.22633018
+             y: -1.19197197
+             z: -1.22617622
+           position_noise:
+             x: 0.00024373
+             y: 0.00022712
+             z: 0.00052796
+           rotation_noise:
+             x: 0.00139687
+             y: 0.00129106
+             z: 0.00058208
+       - id: 40
+         size: 0.20000000
+         pose:
+           position:
+             x: 0.04187885
+             y: -0.61699517
+             z: 1.41179665
+           rotation:
+             x: -2.19808969
+             y: -0.02128344
+             z: 2.21159635
+           position_noise:
+             x: 0.00032611
+             y: 0.00032531
+             z: 0.00065120
+           rotation_noise:
+             x: 0.00116889
+             y: 0.00130078
+             z: 0.00064704
+       - id: 33
+         size: 0.20000000
+         pose:
+           position:
+             x: 0.03136762
+             y: -1.10654857
+             z: 1.05567428
+           rotation:
+             x: 1.23923973
+             y: -1.18471204
+             z: -1.26558014
+           position_noise:
+             x: 0.00065371
+             y: 0.00053610
+             z: 0.00124749
+           rotation_noise:
+             x: 0.00137148
+             y: 0.00121258
+             z: 0.00070317
+       - id: 34
+         size: 0.20000000
+         pose:
+           position:
+             x: -0.05372908
+             y: 2.01115924
+             z: 1.37962194
+           rotation:
+             x: 1.23688343
+             y: -1.18159387
+             z: -1.23171471
+           position_noise:
+             x: 0.00040344
+             y: 0.00092134
+             z: 0.00202898
+           rotation_noise:
+             x: 0.00193325
+             y: 0.00187461
+             z: 0.00057119
+       - id: 134
+         size: 0.20000000
+         pose:
+           position:
+             x: -2.71669041
+             y: -1.38090090
+             z: 1.32633576
+           rotation:
+             x: 0.12373782
+             y: 2.19436799
+             z: 2.20708521
+           position_noise:
+             x: 0.00222884
+             y: 0.00440166
+             z: 0.00587419
+           rotation_noise:
+             x: 0.00587360
+             y: 0.00629059
+             z: 0.00209606
+       - id: 42
+         size: 0.20000000
+         pose:
+           position:
+             x: -3.64514868
+             y: -1.34588101
+             z: 1.77902630
+           rotation:
+             x: -0.03908550
+             y: -2.19166249
+             z: -2.21829857
+           position_noise:
+             x: 0.00297363
+             y: 0.00603854
+             z: 0.00607707
+           rotation_noise:
+             x: 0.00544364
+             y: 0.00495845
+             z: 0.00246453
+       - id: 43
+         size: 0.20000000
+         pose:
+           position:
+             x: -5.33203875
+             y: -1.35043508
+             z: 1.81089439
+           rotation:
+             x: -0.01622105
+             y: -2.18161862
+             z: -2.20133518
+           position_noise:
+             x: 0.00512882
+             y: 0.00894620
+             z: 0.00829571
+           rotation_noise:
+             x: 0.00454316
+             y: 0.00384277
+             z: 0.00280093
+       - id: 36
+         size: 0.20000000
+         pose:
+           position:
+             x: -6.34492808
+             y: -0.19835256
+             z: 1.26337226
+           rotation:
+             x: -1.23090320
+             y: 1.21929673
+             z: -1.20738193
+           position_noise:
+             x: 0.00891580
+             y: 0.01051464
+             z: 0.00535606
+           rotation_noise:
+             x: 0.00628432
+             y: 0.00508589
+             z: 0.00338996
+       - id: 136
+         size: 0.20000000
+         pose:
+           position:
+             x: -6.33292604
+             y: 1.20355192
+             z: 1.29136085
+           rotation:
+             x: 1.25204458
+             y: 1.19274167
+             z: 1.16965274
+           position_noise:
+             x: 0.00876859
+             y: 0.01127102
+             z: 0.00602437
+           rotation_noise:
+             x: 0.01027212
+             y: 0.00916805
+             z: 0.00300962
+       - id: 135
+         size: 0.20000000
+         pose:
+           position:
+             x: -6.31713215
+             y: 2.46546977
+             z: 1.38403674
+           rotation:
+             x: 1.23644183
+             y: 1.22016457
+             z: 1.19378632
+           position_noise:
+             x: 0.00858480
+             y: 0.01269646
+             z: 0.00575941
+           rotation_noise:
+             x: 0.00876871
+             y: 0.00835166
+             z: 0.00289739
+       - id: 44
+         size: 0.20000000
+         pose:
+           position:
+             x: -5.69124610
+             y: 3.29196881
+             z: 1.42698721
+           rotation:
+             x: 1.26235253
+             y: 1.21002516
+             z: 1.21064571
+           position_noise:
+             x: 0.00798345
+             y: 0.01250705
+             z: 0.00598797
+           rotation_noise:
+             x: 0.00469546
+             y: 0.00406690
+             z: 0.00304266
+       - id: 37
+         size: 0.20000000
+         pose:
+           position:
+             x: -4.28293024
+             y: 3.90138030
+             z: 1.30310759
+           rotation:
+             x: 1.59530506
+             y: 0.09785749
+             z: 0.06868130
+           position_noise:
+             x: 0.00660960
+             y: 0.01035343
+             z: 0.00638100
+           rotation_noise:
+             x: 0.00372712
+             y: 0.00245370
+             z: 0.00269717
+       - id: 137
+         size: 0.20000000
+         pose:
+           position:
+             x: -2.80174759
+             y: 4.04847381
+             z: 1.30445377
+           rotation:
+             x: 1.58436839
+             y: -0.19529646
+             z: -0.21313871
+           position_noise:
+             x: 0.00421891
+             y: 0.00749732
+             z: 0.00648318
+           rotation_noise:
+             x: 0.00343811
+             y: 0.00282622
+             z: 0.00298079
+       - id: 35
+         size: 0.20000000
+         pose:
+           position:
+             x: -1.71932392
+             y: 3.78656737
+             z: 1.27219561
+           rotation:
+             x: 1.60486997
+             y: -0.12248781
+             z: -0.06179468
+           position_noise:
+             x: 0.00481380
+             y: 0.00466620
+             z: 0.00400568
+           rotation_noise:
+             x: 0.00283347
+             y: 0.00320581
+             z: 0.00290770
+       - id: 41
+         size: 0.20000000
+         pose:
+           position:
+             x: -0.38508897
+             y: 3.12226044
+             z: 1.31113689
+           rotation:
+             x: 1.23344502
+             y: -1.18402849
+             z: -1.21524482
+           position_noise:
+             x: 0.00081833
+             y: 0.00175248
+             z: 0.00375831
+           rotation_noise:
+             x: 0.00308157
+             y: 0.00273518
+             z: 0.00097224
+ - rig:
+     is_static: false
+     type: simple
+     odom_frame_id: body_rig
+     fake_odom_translation_noise: 0.1
+     fake_odom_rotation_noise: 0.1

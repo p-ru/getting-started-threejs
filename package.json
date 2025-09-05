@@ -1,0 +1,20 @@
+{
+  "name": "getting-started-threejs",
+  "version": "1.0.0",
+  "description": "Building upon the basics of javascript and Three.js, let's explore building our scene and play with animating the position, and rotation of our objects Featuring:   + basic setup  + Normal Material  + requestAnimationFrame  + THREE.Vector3() methods (distanceTo and subVectors)  + add key listeners and Orbit Controls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --open=./index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "roslib": "^1.4.1",
+    "three": "^0.178.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
