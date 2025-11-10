@@ -37,10 +37,10 @@ def create_point_cloud(tag_positions, output_file):
 
 if __name__ == "__main__":
     # Path to the TagSLAM YAML file
-    yaml_file = "/home/droneproject/getting-started-threejs/scripts/tagslam.yaml"
+    yaml_file = "/home/droneproject/getting-started-threejs/scripts/greenhouse_tagslam.yaml"
     
     # Output PLY file
-    output_file = "/home/droneproject/getting-started-threejs/scripts/tag_positions.ply"
+    output_file = "/home/droneproject/getting-started-threejs/scripts/greenhouse_tag_positions.ply"
     
     # Extract tag positions and create point cloud
     tag_positions = extract_tag_positions(yaml_file)
