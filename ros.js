@@ -5,19 +5,19 @@ export function setupRos() {
 
   // Service clients
   ros.clients = {
-    landing: new ROSLIB.Service({ ros, name: '/landing', serviceType: 'std_srvs/Trigger' }),
-    takeoff: new ROSLIB.Service({ ros, name: '/takeoff', serviceType: 'std_srvs/Trigger' }),
-    setGimbalPitch: new ROSLIB.Service({ ros, name: '/set_gimbal_pitch', serviceType: 'dji_srvs/SetValue' }),
-    setGimbalYaw: new ROSLIB.Service({ ros, name: '/set_gimbal_yaw', serviceType: 'dji_srvs/SetValue' }),
-    pullKeyList: new ROSLIB.Service({ ros, name: '/pull_key_list', serviceType: 'dji_srvs/SetString' }),
-    pullKeyInfo: new ROSLIB.Service({ ros, name: '/pull_key_info', serviceType: 'dji_srvs/SetString' }),
+    landing: new ROSLIB.Service({ ros, name: '/Mavic_3M/landing', serviceType: 'std_srvs/Trigger' }),
+    takeoff: new ROSLIB.Service({ ros, name: '/Mavic_3M/takeoff', serviceType: 'std_srvs/Trigger' }),
+    setGimbalPitch: new ROSLIB.Service({ ros, name: '/Mavic_3M/set_gimbal_pitch', serviceType: 'dji_srvs/SetValue' }),
+    setGimbalYaw: new ROSLIB.Service({ ros, name: '/Mavic_3M/set_gimbal_yaw', serviceType: 'dji_srvs/SetValue' }),
+    pullKeyList: new ROSLIB.Service({ ros, name: '/Mavic_3M/pull_key_list', serviceType: 'dji_srvs/SetString' }),
+    pullKeyInfo: new ROSLIB.Service({ ros, name: '/Mavic_3M/pull_key_info', serviceType: 'dji_srvs/SetString' }),
   };
 
   // Topics
   ros.topics = {
     img: new ROSLIB.Topic({ ros, name: '/Mavic_3M/image/compressed', messageType: 'sensor_msgs/CompressedImage' }),
     odom: new ROSLIB.Topic({ ros, name: '/tagslam/odom/body_rig', messageType: 'nav_msgs/Odometry' }),
-    otherState: new ROSLIB.Topic({ ros, name: '/state/other', messageType: 'std_msgs/String' }),
+    otherState: new ROSLIB.Topic({ ros, name: '/Mavic_3M/state/other', messageType: 'std_msgs/String' }),
   
 
   };
